@@ -1,61 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Milan Nepali | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milan Nepali | Network Administrator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <header>
-    <nav>
-      <h1 class="logo">Milan</h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">MILAN NEPALI</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <section id="hero">
-    <h2>Hello, I'm Milan Nepali</h2>
-    <p>A passionate developer and network enthusiast.</p>
-  </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Network Administrator</h1>
+                    <p class="hero-summary">
+                        Dedicated IT professional with experience in network monitoring and reporting. I leverage technical skills in real-time network surveillance, incident detection, and performance analysis to ensure optimal network operations and security. Committed to providing comprehensive reports that guide strategic decisions, improve system efficiency, and minimize downtime.
+                    </p>
+                    <a href="#experience" class="btn">View My Work</a>
+                </div>
+                <div class="hero-image-container">
+                    <img src="milu.jpg" alt="Milan Nepali" class="hero-pic">
+                </div>
+            </div>
+        </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m learning SEO, Cybersecurity, and Web Development. I love building projects that solve real problems.</p>
-  </section>
+        <!-- Experience & Education Section -->
+        <section id="experience" class="scroll-section">
+            <div class="container">
+                <h2 class="section-title">Career Journey</h2>
+                <div class="timeline">
+                    <!-- Subisu -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-content card">
+                            <h3>Network Administrator</h3>
+                            <p class="timeline-sub">Subisu Cable Net Ltd.Pvt | Kathmandu</p>
+                            <p class="timeline-date">July 2023 - Present</p>
+                            <ul>
+                                <li>Collaborate with NOC and support teams to resolve L2/L3 escalations.</li>
+                                <li>Monitor network performance and perform preventive maintenance to avoid outages.</li>
+                                <li>Manage and troubleshoot customer and backbone connectivity issues.</li>
+                                <li>Act as the first point of identification for network-wide issues.</li>
+                                <li>Send SMS notifications for service disruptions and maintenance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <!-- WebSurfer -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-content card">
+                            <h3>L2 Officer</h3>
+                            <p class="timeline-sub">WebSurfer Communication Nepal | Kathmandu</p>
+                             <ul>
+                                <li>Handled Layer 2 technical support for broadband and corporate clients.</li>
+                                <li>Monitored customer connectivity and other network monitoring systems.</li>
+                                <li>Coordinated with NOC/L3 teams to escalate and resolve backend issues.</li>
+                                <li>Configured PPPoE, Static IP, and DHCP assignments for clients.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <!-- Education -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="timeline-content card">
+                            <h3>Bachelor in Information and Technology</h3>
+                            <p class="timeline-sub">Texas College of Management and IT | Kathmandu</p>
+                            <p class="timeline-date">Present</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>📡 CT Line Monitoring App</h3>
-      <p>Python Flask app to monitor POP3 email alerts and generate a real-time dashboard.</p>
-    </div>
-    <div class="project">
-      <h3>🎲 Ludo Game Script</h3>
-      <p>Advanced multiplayer Ludo game with dice control and game logic built in Python.</p>
-    </div>
-    <!-- Add more projects -->
-  </section>
+        <!-- Skills Section -->
+        <section id="skills" class="scroll-section">
+             <div class="container">
+                <h2 class="section-title">Technical Toolkit</h2>
+                <div class="skills-grid">
+                    <div class="skill-category-card card">
+                        <h4><i class="fas fa-project-diagram"></i> Networking & Infrastructure</h4>
+                        <ul>
+                            <li>LAN/WAN, VLAN, Switching & Routing</li>
+                            <li>ISP Infrastructure & Protocols (BGP/OSPF)</li>
+                            <li>MPLS and related protocols</li>
+                            <li>Basic network connectivity diagnostics</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category-card card">
+                        <h4><i class="fas fa-cogs"></i> Configuration & Management</h4>
+                        <ul>
+                            <li>Router & Switch Config (Cisco, Huawei, Juniper)</li>
+                            <li>Bandwidth Performance Analysis</li>
+                            <li>Incident Response & Troubleshooting</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category-card card">
+                        <h4><i class="fas fa-tools"></i> Monitoring & Tools</h4>
+                        <ul>
+                            <li>Nagios, Terminals, MRTG, Cacti</li>
+                            <li>Email & SMS Notification Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+        <!-- Certifications & Languages Section -->
+        <section id="more-info" class="scroll-section">
+            <div class="container more-info-grid">
+                <!-- Training -->
+                <div class="info-card card">
+                    <h3><i class="fas fa-certificate"></i> Training & Certifications</h3>
+                    <ul>
+                        <li>Data Center Management - Training <span>(2023)</span></li>
+                        <li>Network Administration Training <span>(2022)</span></li>
+                        <li>CCNA (Cisco Certified Network Associate) - Academic <span>(2021)</span></li>
+                    </ul>
+                </div>
+                <!-- Languages -->
+                <div class="info-card card">
+                    <h3><i class="fas fa-language"></i> Languages</h3>
+                    <ul>
+                        <li>Nepali <span>(Native)</span></li>
+                        <li>English <span>(Professional)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <p>&copy; 2025 Milan Nepali | All Rights Reserved</p>
-  </footer>
 
-  <script src="script.js"></script>
+        <!-- Contact Section -->
+        <section id="contact" class="scroll-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-card card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <a href="mailto:milantrsds@gmail.com">milantrsds@gmail.com</a>
+                    </div>
+                    <div class="contact-card card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <a href="tel:+9779816625417">+977 9816625417</a>
+                    </div>
+                    <div class="contact-card card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Dhumbarahi, Kathmandu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Milan Nepali. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
