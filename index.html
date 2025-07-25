@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milan Nepali | Network Administrator</title>
+    
+    <!-- SEO and Social Sharing Meta Tags -->
+    <meta name="description" content="The professional portfolio for Milan Nepali, a dedicated Network Administrator specializing in network monitoring, administration, and reporting.">
+    <meta name="keywords" content="Milan Nepali, Network Administrator, CCNA, Nagios, OSPF, BGP, Networking, Kathmandu, Nepal">
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Milan Nepali | Network Administrator">
+    <meta property="og:description" content="Dedicated IT professional specializing in network monitoring, administration, and reporting.">
+    <meta property="og:image" content="milu.jpg"> <!-- Link to your profile picture for social sharing -->
+
+    <!-- Favicon Links -->
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts: Inter for a clean, modern look -->
+    <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -15,6 +28,9 @@
     <header class="navbar">
         <div class="container">
             <a href="#" class="logo">MILAN NEPALI</a>
+            <div id="live-status">
+                <!-- Live time and date will be injected here by script.js -->
+            </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#experience">Experience</a></li>
@@ -32,9 +48,12 @@
                 <div class="hero-text">
                     <h1 class="hero-title">Network Administrator</h1>
                     <p class="hero-summary">
-                        Dedicated IT professional with experience in network monitoring and reporting. I leverage technical skills in real-time network surveillance, incident detection, and performance analysis to ensure optimal network operations and security. Committed to providing comprehensive reports that guide strategic decisions, improve system efficiency, and minimize downtime.
+                        Dedicated IT professional specializing in network monitoring, administration, and reporting. I leverage technical skills in real-time network surveillance, incident detection, and performance analysis to ensure optimal network operations and security. Committed to providing comprehensive reports that guide strategic decisions, improve system efficiency, and minimize downtime.
                     </p>
-                    <a href="#experience" class="btn">View My Work</a>
+                    <div class="hero-buttons">
+                        <a href="#experience" class="btn">View My Work</a>
+                        <a href="CV.pdf" class="btn btn-outline" download>Download CV</a>
+                    </div>
                 </div>
                 <div class="hero-image-container">
                     <img src="milu.jpg" alt="Milan Nepali" class="hero-pic">
@@ -42,13 +61,14 @@
             </div>
         </section>
 
+        <!-- The rest of your sections remain the same -->
         <!-- Experience & Education Section -->
         <section id="experience" class="scroll-section">
             <div class="container">
                 <h2 class="section-title">Career Journey</h2>
                 <div class="timeline">
                     <!-- Subisu -->
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-anim>
                         <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
                         <div class="timeline-content card">
                             <h3>Network Administrator</h3>
@@ -64,7 +84,7 @@
                         </div>
                     </div>
                      <!-- WebSurfer -->
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-anim>
                         <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
                         <div class="timeline-content card">
                             <h3>L2 Officer</h3>
@@ -78,7 +98,7 @@
                         </div>
                     </div>
                      <!-- Education -->
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-anim>
                         <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
                         <div class="timeline-content card">
                             <h3>Bachelor in Information and Technology</h3>
@@ -94,7 +114,7 @@
              <div class="container">
                 <h2 class="section-title">Technical Toolkit</h2>
                 <div class="skills-grid">
-                    <div class="skill-category-card card">
+                    <div class="skill-category-card card" data-anim>
                         <h4><i class="fas fa-project-diagram"></i> Networking & Infrastructure</h4>
                         <ul>
                             <li>LAN/WAN, VLAN, Switching & Routing</li>
@@ -103,7 +123,7 @@
                             <li>Basic network connectivity diagnostics</li>
                         </ul>
                     </div>
-                    <div class="skill-category-card card">
+                    <div class="skill-category-card card" data-anim>
                         <h4><i class="fas fa-cogs"></i> Configuration & Management</h4>
                         <ul>
                             <li>Router & Switch Config (Cisco, Huawei, Juniper)</li>
@@ -111,7 +131,7 @@
                             <li>Incident Response & Troubleshooting</li>
                         </ul>
                     </div>
-                    <div class="skill-category-card card">
+                    <div class="skill-category-card card" data-anim>
                         <h4><i class="fas fa-tools"></i> Monitoring & Tools</h4>
                         <ul>
                             <li>Nagios, Terminals, MRTG, Cacti</li>
@@ -126,7 +146,7 @@
         <section id="more-info" class="scroll-section">
             <div class="container more-info-grid">
                 <!-- Training -->
-                <div class="info-card card">
+                <div class="info-card card" data-anim>
                     <h3><i class="fas fa-certificate"></i> Training & Certifications</h3>
                     <ul>
                         <li>Data Center Management - Training <span>(2023)</span></li>
@@ -135,7 +155,7 @@
                     </ul>
                 </div>
                 <!-- Languages -->
-                <div class="info-card card">
+                <div class="info-card card" data-anim>
                     <h3><i class="fas fa-language"></i> Languages</h3>
                     <ul>
                         <li>Nepali <span>(Native)</span></li>
@@ -150,21 +170,17 @@
         <section id="contact" class="scroll-section">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-subtitle">Feel free to reach out. I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision.</p>
                 <div class="contact-grid">
-                    <div class="contact-card card">
+                    <div class="contact-card card" data-anim>
                         <i class="fas fa-envelope"></i>
                         <h4>Email</h4>
                         <a href="mailto:milantrsds@gmail.com">milantrsds@gmail.com</a>
                     </div>
-                    <div class="contact-card card">
-                        <i class="fas fa-phone"></i>
-                        <h4>Phone</h4>
-                        <a href="tel:+9779816625417">+977 9816625417</a>
-                    </div>
-                    <div class="contact-card card">
+                    <div class="contact-card card" data-anim>
                         <i class="fas fa-map-marker-alt"></i>
                         <h4>Location</h4>
-                        <p>Damauli, Tanahnu</p>
+                        <p>Damauli, Tanahun, Nepal</p>
                     </div>
                 </div>
             </div>
@@ -172,8 +188,20 @@
     </main>
 
     <footer>
-        <p>© 2024 Milan Nepali. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/milan-nepali-159b0b250" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/milana.nepali.145917" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/milan_trsds" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>© 2024 Milan Nepali. All Rights Reserved.</p>
+        </div>
     </footer>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <script src="script.js"></script>
 </body>
