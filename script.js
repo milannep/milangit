@@ -1,87 +1,130 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Live Time and Date for Kathmandu ---
-    const timeElement = document.getElementById('live-status');
+    // --- SNOW ANIMATION SCRIPT ---
+    const createSnowflakes = () => {
+        const snowContainer = document.getElementById('snow-container');
+        if (!snowContainer) return;
 
-    function updateTime() {
-        const now = new Date();
-        const options = {
-            timeZone: 'Asia/Kathmandu',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true,
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
+        const snowflakeCount = 100; // Adjust number of snowflakes
+
+        for (let i = 0; i < snowflakeCount; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+
+            // Randomize properties for a natural look
+            const size = Math.random() * 4 + 2; // Size between 2px and 6px
+            const leftPosition = Math.random() * 100; // Horizontal position in %
+            const animationDuration = Math.random() * 10 + 8; // Duration between 8s and 18s
+            const animationDelay = Math.random() * 10; // Start delay up to 10s
+
+            snowflake.style.width = `${size}px`;
+            snowflake.style.height = `${size}px`;
+            snowflake.style.left = `${leftPosition}vw`;
+            snowflake.style.animationDuration = `${animationDuration}s`;
+            snowflake.style.animationDelay = `-${animationDelay}s`; // Using negative delay starts animations partway through
+
+            snowContainer.appendChild(snowflake);
+        }
+    };
+    createSnowflakes(); // Call the function to create the snow
+
+    // --- PRELOADER SCRIPT ---
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        window.addEventListener('load', () => {
+            preloader.classList.add('preloader-hidden');
+            preloader.addEventListener('transitionend', () => preloader.remove());
+        });
+    }
+
+    // --- HEADER & NAVIGATION ---
+    const header = document.querySelector('.header');
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    // Scrolled header effect
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true }); // Use passive listener for better scroll performance
+
+    // Hamburger menu toggle
+    if (hamburger && navMenu) {
+        const navLinks = navMenu.querySelectorAll(".nav-link");
+
+        const toggleMenu = () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+            // This prevents the main content from scrolling when menu is open
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         };
-        const kathmanduTime = new Intl.DateTimeFormat('en-US', options).formatToParts(now);
-        const timeParts = {};
-        kathmanduTime.forEach(part => { timeParts[part.type] = part.value; });
-        const formattedString = `${timeParts.hour}:${timeParts.minute} ${timeParts.dayPeriod} NPT | ${timeParts.month} ${timeParts.day}, ${timeParts.year}`;
-        if (timeElement) { timeElement.textContent = formattedString; }
-    }
-    if (timeElement) {
-        updateTime();
-        setInterval(updateTime, 1000);
-    }
+        
+        hamburger.addEventListener("click", toggleMenu);
 
-    // --- Smooth Scrolling ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Close menu when a link is clicked
+        navLinks.forEach(link => link.addEventListener("click", () => {
+            if (navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        }));
+
+        // Close menu with Escape key for accessibility
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                toggleMenu();
             }
         });
-    });
+    }
+    
+    // --- DYNAMIC YEAR IN FOOTER ---
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 
-    // --- Staggered Fade-in Animation on Scroll ---
-    const animatedSections = document.querySelectorAll('.scroll-section');
-    const observer = new IntersectionObserver((entries) => {
+    // --- INTERSECTION OBSERVER FOR ANIMATIONS ---
+    const animateOnScroll = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                const animatedChildren = entry.target.querySelectorAll('[data-anim]');
-                animatedChildren.forEach((child, index) => {
-                    setTimeout(() => { child.classList.add('visible'); }, (index + 1) * 150);
-                });
-                observer.unobserve(entry.target);
+                // Handle general fade-in elements
+                if (entry.target.classList.contains('fade-in')) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Unobserve after animating
+                }
+
+                // Handle the number counter animation
+                if (entry.target.id === 'stats-counter') {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        if (counter.dataset.animated) return; // Prevent re-animating
+                        counter.dataset.animated = true;
+                        
+                        const target = +counter.getAttribute('data-target');
+                        const duration = 2000; // Animation duration in milliseconds
+                        
+                        let start = 0;
+                        const stepTime = Math.abs(Math.floor(duration / target));
+
+                        const timer = setInterval(() => {
+                            start += 1;
+                            counter.innerText = start;
+                            if (start === target) {
+                                clearInterval(timer);
+                            }
+                        }, stepTime);
+                    });
+                    observer.unobserve(entry.target); // Stop observing after animation
+                }
             }
         });
-    }, { threshold: 0.15 });
-    animatedSections.forEach(section => { observer.observe(section); });
+    };
 
-    // --- Back to Top Button ---
-    const backToTopButton = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
-        }
+    const observer = new IntersectionObserver(animateOnScroll, {
+        root: null, // observes intersections relative to the viewport
+        threshold: 0.15, // trigger when 15% of the element is visible
     });
 
-    // --- Active Navigation Link Highlighting on Scroll ---
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    function changeNav() {
-        let index = sections.length;
-
-        while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
-        
-        navLinks.forEach((link) => link.classList.remove('active'));
-        if(index >= 0) { // Check if there's a valid section in view
-           const activeLink = document.querySelector(`.nav-links a[href="#${sections[index].id}"]`);
-           if (activeLink) {
-               activeLink.classList.add('active');
-           }
-        }
-    }
-    
-    changeNav(); // Call on load
-    window.addEventListener('scroll', changeNav);
-
+    const elementsToAnimate = document.querySelectorAll('.fade-in, #stats-counter');
+    elementsToAnimate.forEach(el => observer.observe(el));
 });

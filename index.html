@@ -3,206 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milan Nepali | Network Administrator</title>
-    
-    <!-- SEO and Social Sharing Meta Tags -->
-    <meta name="description" content="The professional portfolio for Milan Nepali, a dedicated Network Administrator specializing in network monitoring, administration, and reporting.">
-    <meta name="keywords" content="Milan Nepali, Network Administrator, CCNA, Nagios, OSPF, BGP, Networking, Kathmandu, Nepal">
-    <!-- Open Graph / Facebook / LinkedIn -->
+    <title>Milan Grill & Aluminium Udhyog - Professional Fabrication in Damauli</title>
+    <meta name="description" content="Expert steel, aluminium, and UPVC fabrication in Damauli. Quality gates, windows, and railings by Yogendra Nepali. Contact 9826151301 for a free quote.">
+    <meta name="author" content="Milan Grill & Aluminium Udhyog">
+    <meta name="keywords" content="steel fabrication, aluminium windows, upvc doors, grill design, Damauli, Yogendra Nepali">
+
+    <!-- Social Media Meta Tags (Open Graph) -->
+    <meta property="og:title" content="Milan Grill & Aluminium Udhyog">
+    <meta property="og:description" content="Your Premier Choice for Steel, Aluminium & UPVC Works in Damauli.">
+    <meta property="og:image" content="images/og-image.jpg"> <!-- Create a nice image (1200x630px) for social sharing -->
+    <meta property="og:url" content="file:///C:/Users/milan/udhyog/index.html"> <!-- Replace with your actual URL -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Milan Nepali | Network Administrator">
-    <meta property="og:description" content="Dedicated IT professional specializing in network monitoring, administration, and reporting.">
-    <meta property="og:image" content="milu.jpg"> <!-- Link to your profile picture for social sharing -->
 
-    <!-- Favicon Links -->
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="favicon.png">
+    <!-- Favicon -->
+    <link rel="icon" href="C:\Users\milan\udhyog\image\asdasd.png" type="image/x-icon">
 
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Your Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts & Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container">
-            <a href="#" class="logo">MILAN NEPALI</a>
-            <div id="live-status">
-                <!-- Live time and date will be injected here by script.js -->
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Snow Animation Container -->
+    <div id="snow-container"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="logo-container">
+                <img src="C:\Users\milan\udhyog\image\मिलन ग्रिल उद्योग.png" alt="Milan Grill & Aluminium Udhyog Logo" class="logo">
+                <span class="company-name">Milan Grill & Aluminium Udhyog</span>
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Our Works</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#process" class="nav-link">Process</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link cta-button">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Network Administrator</h1>
-                    <p class="hero-summary">
-                        Dedicated IT professional specializing in network monitoring, administration, and reporting. I leverage technical skills in real-time network surveillance, incident detection, and performance analysis to ensure optimal network operations and security. Committed to providing comprehensive reports that guide strategic decisions, improve system efficiency, and minimize downtime.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#experience" class="btn">View My Work</a>
-                        <a href="CV.pdf" class="btn btn-outline" download>Download CV</a>
-                    </div>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Crafting Quality, Building Trust</h1>
+                <p class="hero-subtitle">Your Premier Choice for Steel, Aluminium & UPVC Works in Damauli</p>
+                <div class="hero-buttons">
+                    <a href="#gallery" class="btn btn-primary">View Our Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get a Quote</a>
                 </div>
-                <div class="hero-image-container">
-                    <img src="milu.jpg" alt="Milan Nepali" class="hero-pic">
+            </div>
+            <a href="#gallery" class="scroll-down" aria-label="Scroll to Our Works section"><i class="fas fa-chevron-down"></i></a>
+        </section>
+
+        <!-- Gallery Section ("Our Works") -->
+        <section id="gallery" class="gallery section-padding">
+            <h2 class="section-title fade-in">Our Works</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card fade-in">
+                    <img src="C:\Users\milan\udhyog\image\gate.png" alt="Ornate custom-fabricated black iron gate" loading="lazy">
+                    <div class="gallery-caption"><h4>Iron Gate</h4></div>
+                </div>
+                <div class="gallery-card fade-in">
+                    <img src="C:\Users\milan\udhyog\image\window.jpg" alt="Modern aluminum sliding window installed in a home" loading="lazy">
+                    <div class="gallery-caption"><h4>Sliding Window</h4></div>
+                </div>
+                <div class="gallery-card fade-in">
+                    <img src="C:\Users\milan\udhyog\image\ChatGPT Image Oct 22, 2025, 03_38_18 PM.png" alt="Durable UPVC window frame structure" loading="lazy">
+                    <div class="gallery-caption"><h4>Window Frame</h4></div>
+                </div>
+                <div class="gallery-card fade-in">
+                    <img src="C:\Users\milan\udhyog\image\bal.jpg" alt="Protective and decorative steel balcony grill" loading="lazy">
+                    <div class="gallery-caption"><h4>Balcony Grill</h4></div>
+                </div>
+                <div class="gallery-card fade-in">
+                    <img src="C:\Users\milan\udhyog\image\steel.jpg" alt="Custom steel staircase structure for a modern building" loading="lazy">
+                    <div class="gallery-caption"><h4>Custom Structure</h4></div>
+                </div>
+                <div class="gallery-card fade-in">
+                    <img src="C:\Users\milan\udhyog\image\fabrication-icon-9.jpg" alt="Sleek aluminum and glass interior partition wall" loading="lazy">
+                    <div class="gallery-caption"><h4>Interior Partition</h4></div>
                 </div>
             </div>
         </section>
-
-        <!-- The rest of your sections remain the same -->
-        <!-- Experience & Education Section -->
-        <section id="experience" class="scroll-section">
-            <div class="container">
-                <h2 class="section-title">Career Journey</h2>
-                <div class="timeline">
-                    <!-- Subisu -->
-                    <div class="timeline-item" data-anim>
-                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
-                        <div class="timeline-content card">
-                            <h3>Network Administrator</h3>
-                            <p class="timeline-sub">Subisu Cable Net Ltd.Pvt | Kathmandu</p>
-                            <p class="timeline-date">July 2023 - Present</p>
-                            <ul>
-                                <li>Collaborate with NOC and support teams to resolve L2/L3 escalations.</li>
-                                <li>Monitor network performance and perform preventive maintenance to avoid outages.</li>
-                                <li>Manage and troubleshoot customer and backbone connectivity issues.</li>
-                                <li>Act as the first point of identification for network-wide issues.</li>
-                                <li>Send SMS notifications for service disruptions and maintenance.</li>
-                            </ul>
+        
+        <!-- About Section -->
+        <section id="about" class="about section-padding">
+            <div class="about-container">
+                <div class="card about-description fade-in">
+                    <h2 class="section-title left-align">About Us</h2>
+                    <p>We craft custom steel gates, iron grills, aluminum doors, windows, and UPVC structures with precision. Every project is measured, fabricated, and installed to fit perfectly by our experienced team, led by proprietor Yogendra Nepali.</p>
+                    <div class="stats-container" id="stats-counter">
+                        <div class="stat-card">
+                            <h3 class="counter" data-target="23">0</h3>
+                            <p>+ Yrs Experience</p>
                         </div>
-                    </div>
-                     <!-- WebSurfer -->
-                    <div class="timeline-item" data-anim>
-                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
-                        <div class="timeline-content card">
-                            <h3>L2 Officer</h3>
-                            <p class="timeline-sub">WebSurfer Communication Nepal | Kathmandu</p>
-                             <ul>
-                                <li>Handled Layer 2 technical support for broadband and corporate clients.</li>
-                                <li>Monitored customer connectivity and other network monitoring systems.</li>
-                                <li>Coordinated with NOC/L3 teams to escalate and resolve backend issues.</li>
-                                <li>Configured PPPoE, Static IP, and DHCP assignments for clients.</li>
-                            </ul>
+                        <div class="stat-card">
+                            <h3 class="counter" data-target="500">0</h3>
+                            <p>+ Projects</p>
                         </div>
-                    </div>
-                     <!-- Education -->
-                    <div class="timeline-item" data-anim>
-                        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <div class="timeline-content card">
-                            <h3>Bachelor in Information and Technology</h3>
-                            <p class="timeline-sub">Texas College of Management and IT | Kathmandu</p>
+                        <div class="stat-card">
+                            <h3>100%</h3>
+                            <p>Satisfaction</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="scroll-section">
-             <div class="container">
-                <h2 class="section-title">Technical Toolkit</h2>
-                <div class="skills-grid">
-                    <div class="skill-category-card card" data-anim>
-                        <h4><i class="fas fa-project-diagram"></i> Networking & Infrastructure</h4>
-                        <ul>
-                            <li>LAN/WAN, VLAN, Switching & Routing</li>
-                            <li>ISP Infrastructure & Protocols (BGP/OSPF)</li>
-                            <li>MPLS and related protocols</li>
-                            <li>Basic network connectivity diagnostics</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category-card card" data-anim>
-                        <h4><i class="fas fa-cogs"></i> Configuration & Management</h4>
-                        <ul>
-                            <li>Router & Switch Config (Cisco, Huawei, Juniper)</li>
-                            <li>Bandwidth Performance Analysis</li>
-                            <li>Incident Response & Troubleshooting</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category-card card" data-anim>
-                        <h4><i class="fas fa-tools"></i> Monitoring & Tools</h4>
-                        <ul>
-                            <li>Nagios, Terminals, MRTG, Cacti</li>
-                            <li>Email & SMS Notification Systems</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications & Languages Section -->
-        <section id="more-info" class="scroll-section">
-            <div class="container more-info-grid">
-                <!-- Training -->
-                <div class="info-card card" data-anim>
-                    <h3><i class="fas fa-certificate"></i> Training & Certifications</h3>
+                <div class="card about-specialties fade-in">
+                    <h3 class="specialties-title">Our Specialties</h3>
                     <ul>
-                        <li>Data Center Management - Training <span>(2023)</span></li>
-                        <li>Network Administration Training <span>(2022)</span></li>
-                        <li>CCNA (Cisco Certified Network Associate) - Academic <span>(2021)</span></li>
-                    </ul>
-                </div>
-                <!-- Languages -->
-                <div class="info-card card" data-anim>
-                    <h3><i class="fas fa-language"></i> Languages</h3>
-                    <ul>
-                        <li>Nepali <span>(Native)</span></li>
-                        <li>English <span>(Professional)</span></li>
+                        <li>Steel sliding and casement gates</li>
+                        <li>Custom iron grills for doors, windows, and balconies</li>
+                        <li>Modern aluminum partitions and windows</li>
+                        <li>Durable UPVC solutions</li>
+                        <li>Custom fabrication and on-site installation</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- Proprietor Section -->
+        <section id="proprietor" class="proprietor section-padding">
+            <h2 class="section-title fade-in">Meet the Proprietor</h2>
+            <div class="proprietor-container">
+                <div class="proprietor-image-wrapper fade-in">
+                    <img src="C:\Users\milan\udhyog\image\Screenshot 2025-10-24 193923.png" alt="Yogendra Nepali, Proprietor of Milan Grill & Aluminium Udhyog" loading="lazy">
+                </div>
+                <div class="proprietor-info fade-in">
+                    <h3>Yogendra Nepali</h3>
+                    <p class="proprietor-summary-item"><strong>Business:</strong> Milan Grill & Aluminium Udhyog</p>
+                    <p class="proprietor-summary-item"><strong>Experience:</strong> 23 Years</p>
+                    <hr class="proprietor-divider">
+                    <p>Mr. Yogendra Nepali has over 23 years of professional experience in fabrication. With a strong commitment to quality craftsmanship and customer satisfaction, he has successfully completed numerous residential and commercial projects, from iron gates and balcony grills to custom metal structures.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Process Section -->
+        <section id="process" class="process section-padding">
+            <h2 class="section-title fade-in">Our Process</h2>
+            <div class="process-container">
+                <div class="card process-card fade-in">
+                    <div class="process-icon"><i class="fas fa-phone-volume"></i></div>
+                    <h3>1. Contact</h3>
+                    <p>Reach out to us via phone or the form to discuss your needs.</p>
+                </div>
+                <div class="card process-card fade-in">
+                    <div class="process-icon"><i class="fas fa-ruler-combined"></i></div>
+                    <h3>2. Site Visit</h3>
+                    <p>We visit your site to take accurate measurements and consult.</p>
+                </div>
+                <div class="card process-card fade-in">
+                    <div class="process-icon"><i class="fas fa-swatchbook"></i></div>
+                    <h3>3. Samples</h3>
+                    <p>We show you material and design samples to choose from.</p>
+                </div>
+                <div class="card process-card fade-in">
+                    <div class="process-icon"><i class="fas fa-truck-fast"></i></div>
+                    <h3>4. Fabrication & Delivery</h3>
+                    <p>Work is completed with precision and installed at your site.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="scroll-section">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="contact-subtitle">Feel free to reach out. I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision.</p>
-                <div class="contact-grid">
-                    <div class="contact-card card" data-anim>
-                        <i class="fas fa-envelope"></i>
-                        <h4>Email</h4>
-                        <a href="mailto:milantrsds@gmail.com">milantrsds@gmail.com</a>
-                    </div>
-                    <div class="contact-card card" data-anim>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h4>Location</h4>
-                        <p>Damauli, Tanahun, Nepal</p>
+        <section id="contact" class="contact section-padding">
+            <h2 class="section-title fade-in">Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="card contact-form-card fade-in">
+                    <!-- IMPORTANT: Replace 'your_form_id' with your actual Formspree ID -->
+                    <form action="https://formspree.io/f/your_form_id" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="e.g., John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="e.g., john.doe@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="card contact-info-card fade-in">
+                    <h3>Call or Visit</h3>
+                    <p><i class="fas fa-user icon"></i><strong>Proprietor:</strong> Yogendra Nepali</p>
+                    <p><i class="fas fa-phone icon"></i><strong>Phone:</strong> <a href="tel:9826151301">9826151301</a></p>
+                    <p><i class="fas fa-map-marker-alt icon"></i><strong>Location:</strong> Vyas - 5, Patan, Damauli</p>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.877028577963!2d84.25486987456743!3d27.97057731930777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995a9539580380f%3A0x3c66930c819d22c5!2sMilan%20Grill%20Udyog!5e0!3m2!1sen!2snp!4v1672834512345" 
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Location of Milan Grill Udyog on Google Maps">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/milan-nepali-159b0b250" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.facebook.com/milana.nepali.145917" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/milan_trsds" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>© 2024 Milan Nepali. All Rights Reserved.</p>
-        </div>
-    </footer>
     
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <span id="current-year"></span> Milan Grill & Aluminium Udhyog. All Rights Reserved.</p>
+        <p>मिलन ग्रिल र आल्मुनियम उद्योग</p>
+    </footer>
 
+    <!-- Optimized JavaScript -->
     <script src="script.js"></script>
+
 </body>
 </html>
