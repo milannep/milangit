@@ -82,7 +82,7 @@ body {
 .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--dark-color); transition: all var(--transition-speed) ease-in-out; }
 
 /* --- Hero Section --- */
-.hero { background: linear-gradient(45deg, rgba(44, 62, 80, 0.85), rgba(33, 37, 41, 0.75)), url('image/hero-bg.png') no-repeat center center/cover; height: 90vh; display: flex; justify-content: center; align-items: center; text-align: center; color: var(--white-color); position: relative; overflow: hidden; }
+.hero { background: linear-gradient(45deg, rgba(44, 62, 80, 0.85), rgba(33, 37, 41, 0.75)), url('hero-bg.png') no-repeat center center/cover; height: 90vh; display: flex; justify-content: center; align-items: center; text-align: center; color: var(--white-color); position: relative; overflow: hidden; }
 .hero-content { max-width: 800px; }
 .hero-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 6vw, 3.5rem); text-shadow: 0 2px 5px rgba(0,0,0,0.5); animation: fadeInUp 1s ease-out 0.3s backwards; }
 .hero-subtitle { font-size: clamp(1.2rem, 3vw, 1.5rem); margin: 1rem 0 2rem; font-weight: 400; animation: fadeInUp 1s ease-out 0.6s backwards; }
@@ -194,4 +194,5 @@ body {
 }
 @media(max-width: 768px) {
     .hero-buttons { flex-direction: column; align-items: center; }
+
 }
