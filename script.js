@@ -1,32 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- SNOW ANIMATION SCRIPT ---
-    const createSnowflakes = () => {
-        const snowContainer = document.getElementById('snow-container');
-        if (!snowContainer) return;
+    // --- SPARK ANIMATION SCRIPT (OPTIMIZED FOR MOBILE) ---
+    const createSparks = () => {
+        // Only run the animation on screens wider than 768px (tablets/desktops)
+        // This is a major performance boost for mobile devices.
+        if (window.innerWidth < 768) {
+            return;
+        }
 
-        const snowflakeCount = 100; // Adjust number of snowflakes
+        const sparkContainer = document.getElementById('spark-container');
+        if (!sparkContainer) return;
 
-        for (let i = 0; i < snowflakeCount; i++) {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
+        const sparkCount = 50; 
 
-            // Randomize properties for a natural look
-            const size = Math.random() * 4 + 2; // Size between 2px and 6px
-            const leftPosition = Math.random() * 100; // Horizontal position in %
-            const animationDuration = Math.random() * 10 + 8; // Duration between 8s and 18s
-            const animationDelay = Math.random() * 10; // Start delay up to 10s
+        for (let i = 0; i < sparkCount; i++) {
+            const spark = document.createElement('div');
+            spark.classList.add('spark');
 
-            snowflake.style.width = `${size}px`;
-            snowflake.style.height = `${size}px`;
-            snowflake.style.left = `${leftPosition}vw`;
-            snowflake.style.animationDuration = `${animationDuration}s`;
-            snowflake.style.animationDelay = `-${animationDelay}s`; // Using negative delay starts animations partway through
+            const size = Math.random() * 3 + 1;
+            const leftPosition = Math.random() * 100;
+            const animationDuration = Math.random() * 3 + 2;
+            const animationDelay = Math.random() * 5;
 
-            snowContainer.appendChild(snowflake);
+            spark.style.width = `${size}px`;
+            spark.style.height = `${size}px`;
+            spark.style.left = `${leftPosition}vw`;
+            spark.style.animationDuration = `${animationDuration}s`;
+            spark.style.animationDelay = `-${animationDelay}s`;
+
+            sparkContainer.appendChild(spark);
         }
     };
-    createSnowflakes(); // Call the function to create the snow
+    createSparks(); // Call the function to create the sparks
 
     // --- PRELOADER SCRIPT ---
     const preloader = document.querySelector('.preloader');
@@ -42,12 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
 
-    // Scrolled header effect
     window.addEventListener('scroll', () => {
         header.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true }); // Use passive listener for better scroll performance
+    }, { passive: true });
 
-    // Hamburger menu toggle
     if (hamburger && navMenu) {
         const navLinks = navMenu.querySelectorAll(".nav-link");
 
@@ -56,20 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.toggle("active");
             navMenu.classList.toggle("active");
             hamburger.setAttribute('aria-expanded', !isExpanded);
-            // This prevents the main content from scrolling when menu is open
             document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         };
         
         hamburger.addEventListener("click", toggleMenu);
 
-        // Close menu when a link is clicked
         navLinks.forEach(link => link.addEventListener("click", () => {
             if (navMenu.classList.contains('active')) {
                 toggleMenu();
             }
         }));
 
-        // Close menu with Escape key for accessibility
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && navMenu.classList.contains('active')) {
                 toggleMenu();
@@ -77,6 +77,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    // --- FIX STICKY HEADER ON RESIZE ---
+    const handleResize = () => {
+        if (window.innerWidth > 992) {
+            if (navMenu && navMenu.classList.contains('active')) {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        }
+    };
+    window.addEventListener('resize', handleResize);
+
+    // --- HERO SECTION SCROLL EFFECT ---
+    const heroTitle = document.querySelector('.hero-title');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+
+    const handleHeroScroll = () => {
+        const scrollY = window.scrollY;
+        
+        if (heroTitle && scrollY < window.innerHeight) {
+            const titleTranslateY = scrollY * 0.5;
+            const opacity = 1 - (scrollY / 500);
+
+            heroTitle.style.transform = `translateY(${titleTranslateY}px)`;
+            heroTitle.style.opacity = opacity < 0 ? 0 : opacity;
+
+            if (heroSubtitle) {
+                const subtitleTranslateY = scrollY * 0.4;
+                heroSubtitle.style.transform = `translateY(${subtitleTranslateY}px)`;
+                heroSubtitle.style.opacity = opacity < 0 ? 0 : opacity;
+            }
+        }
+    };
+    window.addEventListener('scroll', handleHeroScroll, { passive: true });
+
     // --- DYNAMIC YEAR IN FOOTER ---
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
@@ -87,21 +123,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const animateOnScroll = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Handle general fade-in elements
                 if (entry.target.classList.contains('fade-in')) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Unobserve after animating
+                    observer.unobserve(entry.target);
                 }
 
-                // Handle the number counter animation
                 if (entry.target.id === 'stats-counter') {
                     const counters = entry.target.querySelectorAll('.counter');
                     counters.forEach(counter => {
-                        if (counter.dataset.animated) return; // Prevent re-animating
+                        if (counter.dataset.animated) return;
                         counter.dataset.animated = true;
                         
                         const target = +counter.getAttribute('data-target');
-                        const duration = 2000; // Animation duration in milliseconds
+                        const duration = 2000;
                         
                         let start = 0;
                         const stepTime = Math.abs(Math.floor(duration / target));
@@ -114,15 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         }, stepTime);
                     });
-                    observer.unobserve(entry.target); // Stop observing after animation
+                    observer.unobserve(entry.target);
                 }
             }
         });
     };
 
     const observer = new IntersectionObserver(animateOnScroll, {
-        root: null, // observes intersections relative to the viewport
-        threshold: 0.15, // trigger when 15% of the element is visible
+        root: null,
+        threshold: 0.15,
     });
 
     const elementsToAnimate = document.querySelectorAll('.fade-in, #stats-counter');
