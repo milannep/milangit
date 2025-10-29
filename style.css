@@ -81,6 +81,48 @@ body {
 .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 0; z-index: 1001; }
 .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--dark-color); transition: all var(--transition-speed) ease-in-out; }
 
+/* --- Hover Effects for MOUSE devices ONLY --- */
+@media (hover: hover) and (pointer: fine) {
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 0 20px rgba(240, 173, 78, 0.25);
+    }
+    .btn-primary:hover {
+        background-color: #e8a038;
+        border-color: #e8a038;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(240, 173, 78, 0.4);
+    }
+    .btn-secondary:hover {
+        background-color: var(--white-color);
+        color: var(--dark-color);
+        transform: translateY(-3px);
+    }
+    .gallery-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 15px rgba(240, 173, 78, 0.2);
+    }
+    .gallery-card:hover img {
+        transform: scale(1.05);
+    }
+    .process-card:hover .process-icon {
+        transform: scale(1.1) rotate(5deg);
+        color: #e8a038;
+    }
+    .nav-link:hover::after, .nav-link:focus::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    .nav-link:hover, .nav-link:focus {
+        color: var(--primary-color);
+    }
+    .nav-link.cta-button:hover, .nav-link.cta-button:focus {
+        color: var(--white-color);
+        background-color: #1e2b38;
+        transform: translateY(-2px);
+    }
+}
+
 /* --- Hero Section --- */
 .hero { background: linear-gradient(45deg, rgba(44, 62, 80, 0.85), rgba(33, 37, 41, 0.75)), url('hero-bg.png') no-repeat center center/cover; height: 90vh; display: flex; justify-content: center; align-items: center; text-align: center; color: var(--white-color); position: relative; overflow: hidden; }
 .hero-content { max-width: 800px; }
@@ -196,4 +238,5 @@ body {
     .hero-buttons { flex-direction: column; align-items: center; }
 
 }
+
 
