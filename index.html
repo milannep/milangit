@@ -182,26 +182,51 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact section-padding">
-            <h2 class="section-title fade-in">Contact Us</h2>
-            <div class="contact-wrapper">
-                <div class="card contact-form-card fade-in">
-                    <!-- IMPORTANT: Replace 'your_form_id' with your actual Formspree ID -->
-                    <form action="https://formspree.io/f/meopeqnz" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required placeholder="e.g., John Doe">
+       <!-- Contact Section -->
+<section id="contact" class="contact section-padding">
+    <h2 class="section-title fade-in">Contact Us</h2>
+    <div class="contact-wrapper">
+        <div class="card contact-form-card fade-in">
+            <!-- IMPORTANT: Replace 'your_form_id' with your actual Formspree ID -->
+            <form action="https://formspree.io/f/meopeqnz" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="e.g., John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="e.g., john.doe@example.com">
+                </div>
+
+                <!-- Added Contact Number Field -->
+                <div class="form-group">
+                    <label for="phone">Contact Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g., 98XXXXXXXX">
+                </div>
+                <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="address" placeholder="Damauli, Tanahun">
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required placeholder="e.g., john.doe@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+
+                <!-- Updated Message Field (now optional) -->
+                <div class="form-group">
+                            <label for="subject">Your Message</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Please select a reason</option>
+                                <option value="General Message">General Message</option>
+                                <option value="Return / Exchange Request">Return / Exchange Request</option>
+                                <option value="Collaboration / Business Inquiry">Collaboration / Business Inquiry</option>
+                                <option value="Delivery / Shipping Query">Delivery / Shipping Query</option>
+                                <option value="Complaint or Issue">Complaint or Issue</option>
+                                <option value="Order Request">Order Request</option>
+                                <option value="Product Inquiry">Product Inquiry</option>
+                            </select>
+                    <label for="message">Your Message </label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
                 <div class="card contact-info-card fade-in">
@@ -225,7 +250,7 @@
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; <span id="current-year"></span> Milan Grill & Aluminium Udhyog. All Rights Reserved.</p>
-        <p>मिलन ग्रिल र आल्मुनियम उद्योग</p>
+        <p>मिलन ग्रिल & आल्मुनियम उद्योग</p>
     </footer>
 
     <!-- Optimized JavaScript -->
@@ -234,6 +259,3 @@
 </body>
 
 </html>
-
-
-
