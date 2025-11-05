@@ -193,6 +193,7 @@ body {
     .proprietor-container { grid-template-columns: 1fr 2fr; text-align: left; }
     .process-container { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
     .contact-wrapper { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+    align-items: start;
 }
 
 @media (min-width: 992px) {
@@ -225,3 +226,4 @@ body {
     .hero-buttons .btn { width: 80%; }
     .stat-card h3 { font-size: 1.8rem; }
 }
+
