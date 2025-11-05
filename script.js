@@ -3,37 +3,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- SPARK ANIMATION SCRIPT (OPTIMIZED FOR MOBILE) ---
     const createSparks = () => {
         // Only run the animation on screens wider than 768px (tablets/desktops)
+        // This is a major performance boost for mobile devices.
         if (window.innerWidth < 768) {
             return;
         }
-    
+
         const sparkContainer = document.getElementById('spark-container');
         if (!sparkContainer) return;
-    
+
         const sparkCount = 50; 
-    
+
         for (let i = 0; i < sparkCount; i++) {
             const spark = document.createElement('div');
             spark.classList.add('spark');
-    
-            const size = Math.random() * 4 + 1; // Slightly larger max size for more impact
+
+            const size = Math.random() * 3 + 1;
             const leftPosition = Math.random() * 100;
             const animationDuration = Math.random() * 3 + 2;
             const animationDelay = Math.random() * 5;
-            const opacity = Math.random() * 0.7 + 0.3; // Random opacity for bright/dark effect
-    
+
             spark.style.width = `${size}px`;
             spark.style.height = `${size}px`;
             spark.style.left = `${leftPosition}vw`;
-            spark.style.opacity = opacity;
             spark.style.animationDuration = `${animationDuration}s`;
             spark.style.animationDelay = `-${animationDelay}s`;
-    
-            // Add a brighter glow for more prominent sparks
-            if (opacity > 0.8 && size > 2) {
-                 spark.style.boxShadow = '0 0 4px 1px rgba(255, 255, 255, 0.7)';
-            }
-    
+
             sparkContainer.appendChild(spark);
         }
     };
