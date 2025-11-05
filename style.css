@@ -1,6 +1,6 @@
 /* --- Global Styles & "Charcoal & Fire" Color Palette --- */
 :root {
-    --primary-color: #2c3e50;
+    --primary-color: #440dea;
     --accent-color: #f0ad4e;
     --dark-color: #212529;
     --light-color: #f8f9fa;
@@ -227,6 +227,7 @@ body {
     .hero-buttons .btn { width: 80%; }
     .stat-card h3 { font-size: 1.8rem; }
 }
+
 
 
 
